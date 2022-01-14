@@ -29,23 +29,35 @@ mono_light(
   code_font_google   = google_font("Ubuntu Mono"), text_font_size = "20px"
 )
 ```
-#### Given that you have installed:
+
+## Reproducible Project Structure
+
+A way to organize projects can be great for a specific project, but bad for others. This would suggest that for each project we should have a different file structure. 
+
+However, this is not true.
+
+More important than discussing what is the ideal framework for a specific case, is choosing a protocol to follow in all projects.
+
+---
+
+## Tools
+Given that you have installed:
 
 - R - Open source language for statistical computing and graphics 
 
+
 - RStudio - Friendly interface to use R codes
 
-- Git - a version control system. Store all changes in files (history of changes)
+- Git - A version control system. Store all changes in files (history of changes)
 
-#### And an account on 
+#### And have an account on
 
-- Github - an online platform where you put and share Git versioned files
+- Github : an online platform to put and share Git versioned files
+
 ---
-
-#### To work with those tools, simplify everything: usethis package !
+## Simplifying everything: usethis package !
 
 This package helps entire R/Rstudio development flow.
-
 - create files
 - projects
 - use Git
@@ -54,16 +66,16 @@ This package helps entire R/Rstudio development flow.
 
 ```{r, out.width=100, fig.align = 'center', echo= FALSE}
 
-knitr::include_graphics('/home/tai-rocha/Documents/Proj/logo.png')
+knitr::include_graphics('./logo.png')
 ```
 
 ---
 
-#### Step 1: Create project with __usithis__
+## Step 1: Create project with __usithis__
 
 The code below demonstrates how to create a project in RStudio through usethis package.
 ```{r, eval=TRUE, echo=TRUE}
-usethis::create_project("~/Documents/Proj/")
+usethis::create_project("~/home/Proj/")
 ```
 
 - From now on the rule becomes to keep all the files inside this folder (in the example, the Proj folder)
@@ -73,7 +85,7 @@ usethis::create_project("~/Documents/Proj/")
 - First it's most important, because pin the work directory as root folder and plus the rule of keeping all files within the project folder, ensures that your analysis can be performed by anyone on any computer without the worry of adjusting paths to files. used or created by your code.
 
 ---
-#### Step 2: Organization of files and folders
+## Step 2: Organization of files and folders
 
 -  data-raw/: draft scripts and raw data
 
@@ -86,19 +98,32 @@ usethis::create_project("~/Documents/Proj/")
 - inst/ : Any other file type that does not fit in the previous folders can be placed in the inst/ folder.
 
 ---
-#### Step 3: Add Git 
+## Step 3: Add Git 
 
-```{r eval=FALSE, echo=TRUE}
+```{r eval=TRUE, echo=TRUE}
 usethis::use_git()
-``` 
+```
 --
 Now the git tab is inside Rstudio
 
 ```{r, echo=FALSE, out.width="50%", fig.align='left'}
-knitr::include_graphics('/home/tai-rocha/Documents/Proj/git_aba_1.png')
+knitr::include_graphics('./git_aba_1.png')
 ```
 ---
-#### Step 4: when it's the first time using Git/Github/Rstudio, some setting is required
+## Setp 4: Add local folder project to Github
+
+```{r, eval=FALSE}
+usethis::use_github()
+```
+--
+Now the Project is also a Repository in Github
+
+```{r, echo=FALSE, out.width="50%", fig.align='left'}
+knitr::include_graphics('./Proj_github.png')
+```
+
+---
+## When it's the first time using Git/Github/Rstudio, some setting is required
 
 The main is register you github credentials  
 
@@ -107,31 +132,20 @@ usethis::use_git_config(
   user.name = "Your Github NAme",
   user.email = "your_github_email@.com"
 )
-```
 
-#### Setp 5:  Put the local project on Github (Now so-called repository)
-
-```{r, eval=FALSE, echo=TRUE}
-usethis::use_github()
-```
---
-Now the project/repo it's on github
-
-```{r, echo=FALSE, out.width="50%", fig.align='left'}
-
-knitr::include_graphics('/home/tai-rocha/Documents/Proj/Proj_github.png')
 ```
 ---
-#### When the project, folder, files and tools are sync. The workflow is based on 4 main commands:
+### When the project, folder, files and tools are sync. The workflow is based on 4 main commands:
 
 ```{r, echo=FALSE, out.width="80%", fig.align='left'}
-knitr::include_graphics('/home/tai-rocha/Documents/Proj/gitflow.jpg')
+knitr::include_graphics('./gitflow.jpg')
 ```
 ---
-#### When the project, folder, files and tols are sync. The workflow is based on 4 main commands:
+### When the project, folder, files and tols are sync. The workflow is based on 4 main commands:
+
 
 ```{r, echo=FALSE, out.width="80%", fig.align='left'}
-knitr::include_graphics('/home/tai-rocha/Documents/Proj/aba_git.png')
+knitr::include_graphics('./aba_git.png')
 ```
 ---
 ### Minor issue...Why give up on .RData and .Rhistory ?
@@ -155,12 +169,18 @@ By default when open or reopen RStudio, the content stored in these files will b
 
 ## References 
 
+[Zen do R book](https://curso-r.github.io/zen-do-r/)
+
+[Rstudio Cheatsheets](https://www.rstudio.com/resources/cheatsheets/)
+
 [Jenny Bryan](https://jennybryan.org/): 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ZCeBnQBQ1h8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-[usethis](https://usethis.r-lib.org/index.html)
 
-[Zen do R book](https://curso-r.github.io/zen-do-r/)
+
+
+
+
 
 
