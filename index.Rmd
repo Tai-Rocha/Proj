@@ -33,16 +33,16 @@ mono_light(
 ### Tools
 Given that you installed:
 
-- R - Open source language for statistical computing and graphics 
+- [R](https://www.r-project.org/) - Open source language for statistical computing and graphics 
 
 
-- RStudio - Friendly interface to use R codes
+- [RStudio](https://www.rstudio.com/products/rstudio/download/) - Friendly interface to use R codes
 
-- Git - A version control system. Store all changes in files (history of changes)
+- [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) - A version control system. Store all changes in files (history of changes)
 
 #### And have an account on
 
-- Github : an online platform to put and share Git versioned files
+- [Github](https://github.com/) : an online platform to put and share Git versioned files
 
 ---
 ### To work with those tools simplify using usethis package 
