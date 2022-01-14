@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Project organization and reproducible analysis</title>
+    <meta charset="utf-8" />
+    <meta name="date" content="2022-01-14" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Project organization and reproducible analysis
+### 
+### 2022-01-14
+
+---
+
+
+class: middle, left
+
+
+
+
+
+## Reproducible Project Structure
+
+A way to organize projects can be great for a specific project, but bad for others. This would suggest that for each project we should have a different file structure. 
+
+However, this is not true.
+
+More important than discussing what is the ideal framework for a specific case, is choosing a protocol to follow in all projects.
+
+---
+
+## Tools
+Given that you have installed:
+
+- R - Open source language for statistical computing and graphics 
+
+
+- RStudio - Friendly interface to use R codes
+
+- Git - A version control system. Store all changes in files (history of changes)
+
+#### And have an account on
+
+- Github : an online platform to put and share Git versioned files
+
+---
+## Simplifying everything: usethis package !
+
+This package helps entire R/Rstudio development flow.
+- create files
+- projects
+- use Git
+- create repositories on GitHub
+- create packages
+
+&lt;img src="./logo.png" width="100" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Step 1: Create project with __usithis__
+
+The code below demonstrates how to create a project in RStudio through usethis package.
+
+```r
+usethis::create_project("~/home/Proj/")
+```
+
+```
+## ✓ Setting active project to '/home/tai-rocha/home/Proj'
+```
+
+```
+## ✓ Writing a sentinel file '.here'
+```
+
+```
+## • Build robust paths within your project via `here::here()`
+```
+
+```
+## • Learn more at &lt;https://here.r-lib.org&gt;
+```
+
+```
+## ✓ Setting active project to '&lt;no active project&gt;'
+```
+
+- From now on the rule becomes to keep all the files inside this folder (in the example, the Proj folder)
+
+- Each output lines it's a task that the usethis::create_project() function did to prepare the project.  
+
+- First it's most important, because pin the work directory as root folder and plus the rule of keeping all files within the project folder, ensures that your analysis can be performed by anyone on any computer without the worry of adjusting paths to files. used or created by your code.
+
+---
+## Step 2: Organization of files and folders
+
+-  data-raw/: draft scripts and raw data
+
+- data/: To save the structured data (those ready to be analyzed and generate results that we want) .
+
+- R/: only R scripts with functions. The idea is to store in a commonplace everything that we use as an internal tool for the analysis, even as what we want other people to be able to use.
+
+-  docs/: If you need to build websites, reports, static dashboards (flexdashboard) related to your project, you can create a folder called docs/ in the root of your project to store these files.
+
+- inst/ : Any other file type that does not fit in the previous folders can be placed in the inst/ folder.
+
+---
+## Step 3: Add Git 
+
+
+```r
+usethis::use_git()
+```
+
+```
+## ✓ Setting active project to '/home/tai-rocha/Documents/Proj'
+```
+--
+Now the git tab is inside Rstudio
+
+&lt;img src="./git_aba_1.png" width="50%" style="display: block; margin: auto auto auto 0;" /&gt;
+---
+## Setp 4: Add local folder project to Github
+
+
+```r
+usethis::use_github()
+```
+--
+Now the Project is also a Repository in Github
+
+&lt;img src="./Proj_github.png" width="50%" style="display: block; margin: auto auto auto 0;" /&gt;
+
+---
+## When it's the first time using Git/Github/Rstudio, some setting is required
+
+The main is register you github credentials  
+
+
+```r
+usethis::use_git_config(
+  user.name = "Your Github NAme",
+  user.email = "your_github_email@.com"
+)
+```
+---
+### When the project, folder, files and tools are sync. The workflow is based on 4 main commands:
+
+&lt;img src="./gitflow.jpg" width="80%" style="display: block; margin: auto auto auto 0;" /&gt;
+---
+### When the project, folder, files and tols are sync. The workflow is based on 4 main commands:
+
+
+&lt;img src="./aba_git.png" width="80%" style="display: block; margin: auto auto auto 0;" /&gt;
+---
+### Minor issue...Why give up on .RData and .Rhistory ?
+
+.RData contains all objects created by an R session
+
+.Rhistory contains a list of the last executed commands.
+
+
+By default when open or reopen RStudio, the content stored in these files will be loaded in the current desktop as if nothing had happened.
+
+---
+### Minor issue...Why give up on .RData and .Rhistory ?
+
+- Unless we everytime sit down with colleagues to explain .RData and .RData objects and .Rhistory, you can not expect someone else to be able to replicate the analysis.
+
+- By actively relying and depending those files, if we accidentally overwrite an object and the code to recreate it is no longer available, there is no reliable way to recover it.
+
+- R treats all objects stored in memory equally. This means that it will also store all session databases in the hidden files. So the .RData can be a multi-gigabyte file.
+---
+
+## References 
+
+[Zen do R book](https://curso-r.github.io/zen-do-r/)
+
+[Rstudio Cheatsheets](https://www.rstudio.com/resources/cheatsheets/)
+
+[Jenny Bryan](https://jennybryan.org/): 
+
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/ZCeBnQBQ1h8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+
+
+
+
+
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "14:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
