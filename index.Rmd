@@ -1,6 +1,6 @@
 ---
 title: "Project organization and reproducible analysis"
-author: " "
+author: "Tainá Rocha "
 date: "`r Sys.Date()`"
 output: 
   xaringan::moon_reader:
