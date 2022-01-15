@@ -33,16 +33,14 @@ mono_light(
 ### Tools
 Given that you installed:
 
-- [R](https://www.r-project.org/) - Open source language for statistical computing and graphics 
+- <a href="https://www.r-project.org/" style="color: blue; text-decoration: underline;text-decoration-style: dotted;">R</a> - Open source language for statistical computing and graphics 
 
+- <a href="https://www.rstudio.com/products/rstudio/download/" style="color: blue; text-decoration: underline;text-decoration-style: dotted;">RStudio</a> - Friendly interface to use R codes 
 
-- [RStudio](https://www.rstudio.com/products/rstudio/download/) - Friendly interface to use R codes
-
-- [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) - A version control system. Store all changes in files (history of changes)
-
+-  <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git" style="color: blue; text-decoration: underline;text-decoration-style: dotted;">Git</a> - A version control system. Store all changes in files (history of changes)
 #### And have an account on
 
-- [Github](https://github.com/) : an online platform to put and share Git versioned files
+-  <a href="https://github.com/" style="color: blue; text-decoration: underline;text-decoration-style: dotted;">Github</a> -  An online platform to put and share Git versioned files
 
 ---
 ### To work with those tools simplify using usethis package 
@@ -160,12 +158,13 @@ By default when open or reopen RStudio, the content stored in these files will b
 
 ### References 
 
-- [Jenny Bryan](https://jennybryan.org/): 
+
+- <a href="https://jennybryan.org/" style="color: blue; text-decoration: underline;text-decoration-style: dotted;">Jenny Bryan</a> 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ZCeBnQBQ1h8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-- [Zen do R book](https://curso-r.github.io/zen-do-r/)
+- <a href="https://curso-r.github.io/zen-do-r/" style="color: blue; text-decoration: underline;text-decoration-style: dotted;">Zen do R book (Portuguese)</a> 
 
-- [usethis](https://usethis.r-lib.org/index.html)
+- <a href="https://usethis.r-lib.org/index.html" style="color: blue; text-decoration: underline;text-decoration-style: dotted;">usethis</a>
 
 
