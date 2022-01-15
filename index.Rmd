@@ -70,7 +70,7 @@ usethis::create_project("~/home/Proj/")
 
 - Each output lines it's a task that the usethis::create_project() function did to prepare the project 
 
-- The first line is most important, because pin the work directory as root folder and plus the rule of keeping all files within the project folder, ensures that your analysis can be performed by anyone on any computer without the worry of adjusting paths to files. used or created by your code
+- The first line is most important, because pin the work directory as root folder and plus the rule of keeping all files within the project folder, ensures that your analysis can be performed by anyone on any computer without the worry of adjusting paths to files used or created by your code
 
 ---
 ### Step 2: Organization of files and folders
