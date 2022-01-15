@@ -45,7 +45,7 @@ Given that you installed:
 ---
 ### To work with those tools simplify using usethis package 
 
-This package helps entire R/Rstudio development flow.
+This package helps the entire workflow in R/Rstudio
 - create files
 - projects
 - use Git
