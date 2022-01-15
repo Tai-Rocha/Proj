@@ -113,7 +113,7 @@ knitr::include_graphics('./Proj_github.png')
 ---
 #### When it's the first time using Git/Github/Rstudio, some setting is required
 
-The main is register you github credentials  
+The main is register your github credentials  
 
 ```{r}
 usethis::use_git_config(
