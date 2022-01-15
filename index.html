@@ -138,6 +138,16 @@ usethis::use_git_config(
 )
 ```
 ---
+
+### Personal Access Token
+
+- When connecting to GitHub, you will be prompted to create a Personal Access Token (PAT)
+
+- To create your PAT, run usethis::create_github_token()
+
+- To connect to R, run gitcreds::gitcreds_set() and paste your token into the console when requested
+---
+
 #### When the project, folder, files and tools are sync. The workflow is based on 4 main commands:
 
 &lt;img src="./gitflow.jpg" width="80%" style="display: block; margin: auto auto auto 0;" /&gt;
